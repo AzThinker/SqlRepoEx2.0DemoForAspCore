@@ -1,0 +1,42 @@
+﻿@using Webdiyer.WebControls.AspNetCore;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper "*,Webdiyer.WebControls.MvcPager"
+@using DemoTools.BLL.DemoNorthwind
+@model AzCustomersList
+
+<div style="clear: both;"></div>
+<div id="azcustomersTargetId">
+    <table>
+        <tr>
+            <th colspan=" 12 " class="table - title">
+                客户
+            </th>
+        </tr>
+        <tr>
+            <th>CustomerID_simpCN</th>
+            <th>CompanyName_simpCN</th>
+            <th>ContactName_simpCN</th>
+
+            <th>操作</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.CustomerID)</td>
+                <td> @Html.DisplayFor(modelItem => item.CompanyName)</td>
+                <td> @Html.DisplayFor(modelItem => item.ContactName)</td>
+                <td>
+                    @Html.ActionLink("增加", "Create", new { Id = item.CustomerID })
+                    @Html.ActionLink("删除", "Delete", new { Id = item.CustomerID })
+                    @Html.ActionLink("编辑", "Edit", new { Id = item.CustomerID })
+                    @Html.ActionLink("明细", "Details", new { Id = item.CustomerID })
+                </td>
+
+
+            </tr>
+
+        }
+    </table>
+</div>
+<mvcpager asp-model="@Model" ajax-enabled="true" ajax-update-target="azcustomersTargetId"></mvcpager>

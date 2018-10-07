@@ -1,0 +1,36 @@
+﻿@using DemoTools.BLL.DemoNorthwind
+@model IEnumerable<AzCustomers>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div style="clear: both;"></div>
+<div id="azcustomersTargetId">
+    <table>
+        <tr>
+            <th colspan=" 12 " class="table - title">
+                客户
+            </th>
+        </tr>
+        <tr>
+            <th>CustomerID</th>
+            <th>CompanyName</th>
+          
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.CustomerID)</td>
+                <td> @Html.DisplayFor(modelItem => item.CompanyName)</td>
+                <td> @Html.DisplayFor(modelItem => item.ContactName)</td>
+                <td> @Html.DisplayFor(modelItem => item.ContactTitle)</td>
+                
+
+
+            </tr>
+
+        }
+    </table>
+</div>

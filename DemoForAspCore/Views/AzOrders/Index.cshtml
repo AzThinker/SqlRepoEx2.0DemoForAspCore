@@ -1,0 +1,12 @@
+﻿@using DemoTools.BLL.DemoNorthwind
+@model AzOrdersList
+@{
+   ViewBag.Title ="订单";
+ }
+
+ <div id="content">
+ <h2>订单</h2>
+ <div style="clear: both;"></div>
+    @await Html.PartialAsync("DetailsPage", Model) 
+ </div>
+@section Scripts{<script src="~/js/MvcPager.js"></script>}

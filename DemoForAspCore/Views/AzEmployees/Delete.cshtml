@@ -1,0 +1,146 @@
+﻿
+@using DemoTools.BLL.DemoNorthwind
+@model AzEmployees
+@{
+   ViewBag.Title = "删除员工表";
+ }
+
+<h2>删除员工表</h2>
+@using (Html.BeginForm("Delete","AzEmployees")) {
+  @Html.ValidationSummary(true)
+   <fieldset>
+    <legend>删除员工表</legend>
+       	@Html.HiddenFor(model => model.EmployeeID)
+	        <div class="display-label">
+           EmployeeID_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.EmployeeID)
+        </div>
+         
+	        <div class="display-label">
+           LastName_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.LastName)
+        </div>
+         
+	        <div class="display-label">
+           FirstName_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.FirstName)
+        </div>
+         
+	        <div class="display-label">
+           Title_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Title)
+        </div>
+         
+	        <div class="display-label">
+           TitleOfCourtesy_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.TitleOfCourtesy)
+        </div>
+         
+	        <div class="display-label">
+           BirthDate_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.BirthDate)
+        </div>
+         
+	        <div class="display-label">
+           HireDate_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.HireDate)
+        </div>
+         
+	        <div class="display-label">
+           Address_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Address)
+        </div>
+         
+	        <div class="display-label">
+           City_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.City)
+        </div>
+         
+	        <div class="display-label">
+           Region_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Region)
+        </div>
+         
+	        <div class="display-label">
+           PostalCode_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.PostalCode)
+        </div>
+         
+	        <div class="display-label">
+           Country_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Country)
+        </div>
+         
+	        <div class="display-label">
+           HomePhone_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.HomePhone)
+        </div>
+         
+	        <div class="display-label">
+           Extension_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Extension)
+        </div>
+         
+	        <div class="display-label">
+           Photo_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Photo)
+        </div>
+         
+	        <div class="display-label">
+           Notes_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.Notes)
+        </div>
+         
+	        <div class="display-label">
+           ReportsTo_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.ReportsTo)
+        </div>
+         
+	        <div class="display-label">
+           PhotoPath_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.PhotoPath)
+        </div>
+         
+
+       <button type="submit">删除</button>
+    </fieldset>
+ }
+ @Html.ActionLink("返回列表", "Index")  
+
+

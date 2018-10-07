@@ -1,0 +1,148 @@
+﻿
+@using DemoTools.BLL.DemoNorthwind
+@model AzEmployees
+@{
+   ViewBag.Title = "编辑员工表";
+ }
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<h2>编辑员工表</h2>
+@using (Html.BeginForm("Edit", "AzEmployees")) {
+  @Html.ValidationSummary(true)
+   <fieldset>
+    <legend>编辑员工表</legend>
+            	@Html.HiddenFor(model => model.EmployeeID)
+	        <div class="display-label">
+           EmployeeID_simpCN
+        </div>
+        <div class="display-field">
+           @Html.DisplayFor(model => model.EmployeeID)
+        </div>
+         
+	        <div class="editor-label">
+           LastName_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.LastName)
+	   @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+	        <div class="editor-label">
+           FirstName_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.FirstName)
+	   @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+	        <div class="editor-label">
+           Title_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Title)
+	   @Html.ValidationMessageFor(model => model.Title)
+        </div>
+	        <div class="editor-label">
+           TitleOfCourtesy_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.TitleOfCourtesy)
+	   @Html.ValidationMessageFor(model => model.TitleOfCourtesy)
+        </div>
+	        <div class="editor-label">
+           BirthDate_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.BirthDate)
+	   @Html.ValidationMessageFor(model => model.BirthDate)
+        </div>
+	        <div class="editor-label">
+           HireDate_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.HireDate)
+	   @Html.ValidationMessageFor(model => model.HireDate)
+        </div>
+	        <div class="editor-label">
+           Address_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Address)
+	   @Html.ValidationMessageFor(model => model.Address)
+        </div>
+	        <div class="editor-label">
+           City_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.City)
+	   @Html.ValidationMessageFor(model => model.City)
+        </div>
+	        <div class="editor-label">
+           Region_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Region)
+	   @Html.ValidationMessageFor(model => model.Region)
+        </div>
+	        <div class="editor-label">
+           PostalCode_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.PostalCode)
+	   @Html.ValidationMessageFor(model => model.PostalCode)
+        </div>
+	        <div class="editor-label">
+           Country_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Country)
+	   @Html.ValidationMessageFor(model => model.Country)
+        </div>
+	        <div class="editor-label">
+           HomePhone_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.HomePhone)
+	   @Html.ValidationMessageFor(model => model.HomePhone)
+        </div>
+	        <div class="editor-label">
+           Extension_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Extension)
+	   @Html.ValidationMessageFor(model => model.Extension)
+        </div>
+	        <div class="editor-label">
+           Photo_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Photo)
+	   @Html.ValidationMessageFor(model => model.Photo)
+        </div>
+	        <div class="editor-label">
+           Notes_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Notes)
+	   @Html.ValidationMessageFor(model => model.Notes)
+        </div>
+	        <div class="editor-label">
+           ReportsTo_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.ReportsTo)
+	   @Html.ValidationMessageFor(model => model.ReportsTo)
+        </div>
+	        <div class="editor-label">
+           PhotoPath_simpCN
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.PhotoPath)
+	   @Html.ValidationMessageFor(model => model.PhotoPath)
+        </div>
+
+     <button type="submit">编辑</button>  
+    </fieldset>
+ }
+ @Html.ActionLink("返回列表", "Index") 
+
