@@ -4,11 +4,16 @@
 
  
 # 2.0.3版本更新 2018.10.7
-## 1、增加数据特性
+## 1、增加分页辅助功能
 
-## 2、增加属性判断器
+查询语句增加PageGo()
+var results = repository.Query().Select(e => e.Id, e => e.Task, e => e.CreatedDate).Page(5,1).PageGo();
+返回是一个(IEnumerable<TEntity> QueryResult, int PageCount) 的Tupe值
+用于分页控件使用。
 
-## 3、二进制数据支持
+## 2、增加ServiceCollection一些功能方法
+
+## 3、修正部分bug
 
 
  
