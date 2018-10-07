@@ -1,6 +1,6 @@
 # SqlRepoEx2.0DemoForAspCore
 
-本例演示 SqlRepoEx2.0 在 AspCore 中的应用。
+# 本例演示 SqlRepoEx2.0 在 AspCore 中的应用。
 
  
 # 2.0.3版本更新 2018.10.7
