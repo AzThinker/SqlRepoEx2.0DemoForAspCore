@@ -42,7 +42,7 @@ namespace DemoTools.WebUI.DemoNorthwind.Controllers
                         , s => s.Phone
                         , s => s.Fax
 
-                ).OrderBy(o => o.CustomerID).Page(20, pageindex - 1).PageGo();
+                ).OrderBy(o => o.CustomerID).Page(20, pageindex).PageGo();
 
             var model = AzCustomersList.GetModelList(queryresult, 20, pageindex);
             string xrh = Request.Headers["X-Requested-With"];
