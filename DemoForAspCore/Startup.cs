@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SqlRepoEx.MsSql.ServiceCollection;
+using SqlRepoEx.MySql.ServiceCollection;
 
 
 namespace WebApplication9
@@ -31,8 +31,8 @@ namespace WebApplication9
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-           //string ConnectionString = "datasource=127.0.0.1;username=test;password=test;database=northwind;charset=gb2312;SslMode = none;";
-            string ConnectionString = "Data Source=(Local);Initial Catalog=Northwind;User ID=test;Password=test";
+            string ConnectionString = "datasource=127.0.0.1;username=test;password=test;database=northwind;charset=gb2312;SslMode = none;";
+           //string ConnectionString = "Data Source=(Local);Initial Catalog=Northwind;User ID=test;Password=test";
             services.AddSimpleSqlRepo(ConnectionString); 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
