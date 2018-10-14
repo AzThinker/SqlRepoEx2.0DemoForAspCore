@@ -2,6 +2,13 @@
 
 # 本例演示 SqlRepoEx2.0 在 AspCore 中的应用。
 
+
+# 2.0.7 版本更新 2018.10.14
+## 1、修正部分错误
+## 2、优化代码
+## 3、增加代码注释
+
+
 # 2.0.4版本更新 2018.10.9
  ## 1、修正分页错误
  ## 2、SqlRepoEx.MsSql.ServiceCollection;与SqlRepoEx.MySql.ServiceCollection 命名空间错误修正
