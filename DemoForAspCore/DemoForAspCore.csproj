@@ -27,8 +27,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="SqlRepoEx.MsSql.ServiceCollection" Version="2.0.7" />
-    <PackageReference Include="SqlRepoEx.MySql.ServiceCollection" Version="2.0.7" />
+    <PackageReference Include="SqlRepoEx.MsSql.ServiceCollection" Version="2.0.8" />
+    <PackageReference Include="SqlRepoEx.MySql.ServiceCollection" Version="2.0.8" />
   </ItemGroup>
 
   <ItemGroup>
