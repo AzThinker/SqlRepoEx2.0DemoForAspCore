@@ -1,4 +1,44 @@
 
+# 2.1.0  版本更新 2018.10.16
+
+## 增加事务支持
+
+
+### 1、起用事务支持的语句执行器
+
+```
+ MsSqlRepoFactory.UseStatementTransactionExecutor();
+```
+
+### 2、代码中使用使用方法 repository.GetConnectionProvider.BeginTransaction() 获取事务控制
+```
+public void DoTransactionIt()
+        {
+            var repository = MsSqlRepoFactory.Create<ToDo>();
+            var results = repository.Query().Where(c => c.Id < 6);
+           foreach (var item in results.Go())
+            {
+                Console.WriteLine($"{item.Id}\t {item.Task} ");
+            }
+            using (var tranc = repository.GetConnectionProvider.BeginTransaction())
+            {
+                repository.Update().Set(c => c.Task, "A01").Where(c => c.Id == 1).Go();// A1
+                repository.Update().Set(c => c.Task, "B01").Where(c => c.Id == 2).Go();// B2
+                tranc.Rollback();
+            }
+           foreach (var item in results.Go())
+            {
+                Console.WriteLine($"{item.Id}\t {item.Task} ");
+            }
+            Console.WriteLine(results.Sql());
+
+        }
+
+
+```
+
+
+
 # 2.0.8版本更新 2018.10.15
 
 ## 1、修正部分错误
