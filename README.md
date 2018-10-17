@@ -1,3 +1,45 @@
+# 2.2.0 版本更新 2018.10.17
+
+### 1、修正MySql 增加语句有自增自段时，返回语句时的错误；
+
+### 2、  IInsertStatement<TEntity>和IUpdateStatement<TEntity>接口增加两个方法
+
+```
+	string ParamSql();
+
+        (string paramsql, TEntity entity) ParamSqlWithEntity();
+```
+返回形如下列SQL语句：
+```
+var repository = MsSqlRepoFactory.Create<ToDo>();
+var results = repository.Query().Where(c => c.Id == 6).Go().FirstOrDefault();
+Console.WriteLine(resultinsert.ParamSql());
+
+1、	INSERT  ToDo ( CreatedDate , IsCompleted , Task )
+		VALUES(@CreatedDate,@IsCompleted,@Task);
+
+
+var resultinsert = repository.Update().For(results);
+ Console.WriteLine(resultinsert.ParamSql());
+2、	UPDATE   ToDo 
+	SET CreatedDate  = @CreatedDate, IsCompleted  = @IsCompleted, Task  = @Task
+	WHERE Id  = @Id;
+```
+
+ 以解决储如Dapper等ORM工具需要参数类型字符串需求</br>
+
+  SqlRepoEx中是可以与 Dapper 同时并存，意味着初始化SqlRepoEx后，</br>
+  1、可以直接从 SqlRepoEx 中操作返回结果；</br>
+  2、可以通过 SqlRepoEx 来生成SQL语句，另外Dapper 主要是基于SqlMapper  ，SqlMapper中定义了基于 IDbConnection 接口的操作，你可以通过SqlRepoEx 的  IConnectionProvider 接口来获取一个 DbConnection</br>
+   有两种方法</br>
+```   
+     （1）、 var connectionProvider = new AppConfigFirstConnectionProvider();
+     IDbConnection dbConnection = connectionProvider.GetDbConnection;
+
+     （2）、 var repository = MsSqlRepoFactory.Create<ToDo>();
+            IDbConnection dbConnection = repository.GetConnectionProvider.GetDbConnection;
+     
+```
 
 # 2.1.0  版本更新 2018.10.16
 
